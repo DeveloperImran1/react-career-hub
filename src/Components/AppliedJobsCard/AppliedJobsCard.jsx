@@ -1,13 +1,11 @@
+import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { TbCoin } from "react-icons/tb";
-import { Link } from "react-router-dom";
 
 
-const Job = ({ job }) => {
+const AppliedJobsCard = ({job}) => {
     const { logo, job_title, company_name, remote_or_onsite, job_type, location, salary, id } = job;
-    console.log(job)
     return (
-
         <div className="w-full space-y-4 rounded-lg  p-6 shadow-lg md:w-[350px] bg-white">
             <img alt="card navigate ui" className="w-full object-cover  rounded-lg " src={logo} />
             <div className="grid gap-2">
@@ -23,13 +21,9 @@ const Job = ({ job }) => {
                 <div className="text-lg font-semibold flex items-center "><FaLocationDot></FaLocationDot> {location}</div>
                 <div className="text-lg font-semibold flex items-center "><TbCoin></TbCoin> {salary}</div>
             </div>
-            <div className="flex gap-4">
-                <Link to={`job/${id}`}> <button className="px-6 py-2 bg-slate-800 text-white rounded-lg font-semibold md:text-base sm:text-sm text-[12px] hover:bg-slate-950">View Details</button>
-                </Link>
-            </div>
+          
         </div>
-
     );
 };
 
-export default Job;
+export default AppliedJobsCard;
